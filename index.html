@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dark Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+                .about-section {
+          background: linear-gradient(135deg, rgba(5, 75, 84, 0.6));
+          padding: 60px 30px;
+          border-radius: 25px;
+          box-shadow: 0 0 40px #11b9b9;
+          color: #fff;
+          max-width: 1100px;
+          margin: 60px auto;
+          overflow: hidden;
+          animation: fadeInUp 1s ease forwards;
+        }
+      
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      
+        .about-content {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 40px;
+        }
+      
+        .about-image img {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+      
+        .about-image img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 35px rgba(0, 188, 212, 0.6);
+        }
+      
+        .about-text {
+          flex: 1;
+        }
+      
+        .about-text h2 {
+          font-size: 3rem;
+          margin-bottom: 20px;
+          text-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
+        }
+      
+        .about-text p {
+          font-size: 1.3rem;
+          line-height: 1.8;
+          max-width: 700px;
+        }
+      
+        .resume-download {
+          margin-top: 30px;
+        }
+      
+        .resume-download a {
+          display: inline-block;
+          padding: 12px 24px;
+          background-color: rgba(0, 188, 212, 0.6);
+          color: #fff;
+          text-decoration: none;
+          border-radius: 30px;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+      
+        .resume-download a:hover {
+          background-color:rgba(23, 26, 26, 0.6);
+          box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+          transform: scale(1.05);
+        }
+      
+        @media (max-width: 768px) {
+          .about-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+          .about-text p {
+            max-width: 100%;
+          }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #0e2b37);
+            color: #fff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+           
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+        header h1 {
+            font-size: 2rem;
+            color: #00bcd4;
+        }
+        nav ul {
+          justify-content:space-evenly;
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+        
+        
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        section {
+            padding: 100px 10%;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        .hero span {
+            color: #00bcd4;
+            animation: typing 3s steps(20, end) infinite;
+        }
+        @keyframes typing {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+          .projects, .contact {
+            margin-top: 50px;
+        }
+        .skills {
+  padding: 40px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.skill-card {
+  background: #000;
+  border-radius: 20px;
+  padding: 7px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+}
+
+.skill-card h4 {
+  margin: 10px 0;
+  color: #fff;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00bcd4 0%, #232426 100%);
+  width: 0;
+  animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+  to {
+    width: var(--bar-width);
+  }
+}
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+.card {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+       
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+        }
+      
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        footer a {
+            margin: 0 10px;
+            color: #00bcd4;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        .contact-static {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
+    }
+    #t
+    {
+        text-align: justify;
+    }
+    .contact-static p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+    .contact-static p i {
+      margin-right: 10px;
+      color: rgba(0, 188, 212, 0.6);
+    }
+
+
+
+
+    .timeline-section {
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    text-align: center;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 60px;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.timeline {
+    display: grid;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 6px solid transparent;
+    border-image: linear-gradient(180deg, #00bcd4, #000);
+    border-image-slice: 1;
+    padding: 25px 35px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.3);
+    transition: all 0.4s ease;
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+}
+
+.timeline-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+.timeline-card h3 {
+    font-size: 2rem;
+    color: #00f0ff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.timeline-card p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: #ffffffd9;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline {
+        gap: 20px;
+    }
+    .timeline-card {
+        padding: 20px;
+    }
+}
+
+
+.timeline-card i {
+    color: #f39c12;
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.scene {
+    margin-left: 450px;
+    width: 250px;
+    height: 250px;
+    perspective: 800px;
+  }
+  .scene:hover .cube {
+    animation-play-state: paused;
+}
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 30s infinite linear;
+    
+  }
+
+  .cube-face {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .cube-face img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .cube-face:hover {
+    transform: scale(1.05);
+  }
+
+  .front { transform: rotateY(0deg) translateZ(125px); }
+  .back { transform: rotateY(180deg) translateZ(125px); }
+  .right { transform: rotateY(90deg) translateZ(125px); }
+  .left { transform: rotateY(-90deg) translateZ(125px); }
+  .top { transform: rotateX(90deg) translateZ(125px); }
+  .bottom { transform: rotateX(-90deg) translateZ(125px); }
+
+  @keyframes rotateCube {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(12, 12, 12, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .modal.active {
+    display: block;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 119, 127, 0.5);
+    display: none;
+    z-index: 9;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+        .resume-btn {
+  background-color: #28a745; /* A nice green for resume */
+}
+
+.resume-btn:hover {
+  background-color: #218838; /* Slightly darker green on hover */
+}
+
+
+
+
+        .hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.hero h1 span {
+  color: #ff6f61;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.linkedin-btn {
+  background-color: #0A66C2;
+}
+
+.github-btn {
+  background-color: #171515;
+}
+
+.email-btn {
+  background-color: #D44638;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  gap: 8px;
+}
+
+.logo i {
+  font-size: 1rem;
+  color: rgba(0, 188, 212, 0.6);
+}
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-user-circle"></i> LT
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="#Education"><i class="fas fa-graduation-cap"></i>Education</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
+        <li><a href="#skills"><i class="fas fa-tools"></i>Skills</a></li>
+        <li><a href="#projects"><i class="fas fa-code"></i>Projects</a></li>
+        <li><a href="#Achievements"><i class="fas fa-trophy"></i>Achievements</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  
+
+    <section class="hero" id="hero">
+        <h1>Hello! <br>I'm Lakshmi Susmitha Thota <br><span>an aspiring Web Developer</span></h1>
+        <div class="button-group">
+          <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" class="btn linkedin-btn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a> 
+          <a href="https://github.com/LakshmiSusmithaThota" target="_blank" class="btn github-btn">
+            <i class="fab fa-github"></i> GitHub
+          </a> 
+
+          <a href="resume.pdf" download class="btn resume-btn">
+            <i class="fas fa-file-alt"></i> Resume
+          </a>
+          
+          <a href="mailto:thotalakshmisusmitha@gmail.com" class="btn email-btn">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="image.jpeg" alt="Lakshmi Susmitha Thota">
+          </div>
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p id="t">Hello! I’m Lakshmi Susmitha Thota, a passionate and creative web developer. I specialize in crafting beautiful, responsive, and user-friendly websites using modern technologies like HTML, CSS, and JavaScript. My enthusiasm for continuous learning drives me to explore advanced frameworks and innovative design techniques.</p>
+            <div class="resume-download">
+              <a href="resume.pdf" download>Download My Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="Education" class="timeline-section">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="timeline">
+            <div class="timeline-card">
+                <h3><i class=></i> B.Tech in Information Technology</h3>
+                <p><i class="fas fa-school"></i> Lakireddy Balireddy College of Engineering<br>2022 - 2026</p>
+                <p><i class="fas fa-star"></i> 9.35 CGPA (till V Sem)</p>
+            </div>
+            <div class="timeline-card">
+                <h3><i class=></i> Intermediate (MPC)</h3>
+                <p><i class="fas fa-school"></i> Gitams Junior College<br>2020 - 2022</p>
+                <p><i class="fas fa-star"></i> 97.9%</p>
+            </div>
+            <div class="timeline-card">
+                <h3><i class=></i> SSC</h3>
+                <p><i class="fas fa-school"></i> Sri Chaitanya Techno School<br>2019 - 2020</p>
+                <p><i class="fas fa-star"></i> 99.5%</p>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+    <section id="experience" class="timeline-section">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="timeline">
+          <div class="timeline-card">
+              <h3><i class="fas fa-microchip"></i> AIoT Internship, Project Lead</h3>
+              <p><i class="fas fa-building"></i> Smart Home & Industrial Solutions <br>
+              <i class="fas fa-map-marker-alt"></i> Vijayawada, AP
+              <i class="fas fa-calendar-alt"></i> May 2024 – July 2024</p>
+              <p><i class="fas fa-project-diagram"></i> <strong>The Prodigy Campus: Smart Automation for a New Era</strong><br>
+              Spearheaded design & deployment of an intelligent campus automation system to elevate efficiency & user convenience.</p>
+              <p><strong>Technologies Used:</strong> Python, Thonny IDE, OpenCV, MIT App Inventor, Google Sheets API</p>
+          </div>
+      </div>
+     
+  </section>
+  
+
+
+
+
+
+
+
+
+
+      
+      
+
+      <section class="skills" id="skills">
+        <h2 class="section-title">My Skills</h2>
+      
+        <!-- Programming Languages -->
+        <h4 >Programming Languages</h4>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+            <h4>HTML</h4>
+           
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+            <h4>CSS</h4>
+           
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <h4>JavaScript</h4>
+           
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <h4>React</h4>
+          
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <h4>Node.js</h4>
+            
+          </div>
+         
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <h4>Python</h4>
+           
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+            <h4>Java</h4>
+           
+          </div>
+        </div>
+      <br>
+        <!-- Databases -->
+        <h3>Databases</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+            <h4>MongoDB</h4>
+          
+          </div>
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+            <h4>SQL</h4>
+           
+          </div>
+        </div>
+      <br>
+        <!-- Tools -->
+        <h3>Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="VS Code" />
+            <h4>VS Code</h4>
+          </div>
+        
+          <div class="skill-card">
+            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jupyter.svg" alt="Jupyter Notebook" style="background: white; border-radius: 8px; padding: 5px;" />
+            <h4>Jupyter Notebook</h4>
+          </div>
+        
+          <div class="skill-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png" alt="Google Colab" />
+            <h4>Google Colab</h4>
+          </div>
+        
+          <div class="skill-card">
+            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub" />
+            <h4>Github</h4>
+          </div>
+        </div>
+        
+      
+       
+      </section>
+      
+      
+
+    <section class="projects" id="projects">
+        <h2 style="text-align: center;" class="section-title">My Projects</h2>
+      
+        <div class="project-grid">
+            <div class="card">
+                <h3>The Prodigy Campus: Smart Campus Automation (AIoT)</h3>
+                <img src="image1.png" alt="" width="250px" height="200px">
+                <p ><strong>Role:</strong> Team Lead</p>
+                <p><strong>Tools:</strong> Python IDLE, Thonny, MIT App Inventor, Google Sheets, IoT Kit</p>
+                <p><strong>Description:</strong> Built a smart system that automates lights and fans using face detection. Displays real-time data on an LCD, stores data in Google Sheets, and allows mobile monitoring via an MIT App.</p>
+            </div>
+
+
+            <div class="card">
+              <h3>My Portfolio</h3>
+              <br>
+              <br>
+              <br>
+              <img src="image.png" alt="" width="250px" height="200px">
+              <p><strong>Role:</strong> Developer</p>
+              <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
+              <p><strong>Description:</strong> Created a dynamic personal portfolio website with interactive features, showcasing projects, skills, and achievements with responsive design.</p>
+          </div>
+
+          <div class="card">
+            <h3>WanderWay</h3>
+            <br>
+            <br>
+            <br>
+            <img src="image copy 2.png" alt="" width="250px" height="200px">
+            <p><strong>Role:</strong> Team Lead</p>
+            <p><strong>Tools:</strong> HTML, CSS, JavaScript, jQuery</p>
+            <p><strong>Description:</strong> Designed and developed a responsive and interactive travel website with smooth navigation, destination selection, package browsing, and efficient booking processes to enhance user experience.</p>
+          </div>
+
+            <div class="card">
+              <h3>Ballot Bridge: Online Voting System (MERN Stack)</h3>
+              <img src="image copy.png" alt="" width="250px" height="200px">
+              <p><strong>Role:</strong> Team Lead</p>
+              <p><strong>Tools:</strong> VS Code, MongoDB Atlas, React.js, Node.js, Express.js, HTML, CSS, JavaScript</p>
+              <p><strong>Description:</strong> Developed a secure voting platform with role-based authentication, a React front-end, and Node.js backend. Integrated MongoDB Atlas for tamper-proof .</p>
+          </div>
+          
+         
+          
+          
+          
+        
+        </div>
+    </section>
+
+
+
+    <section class="Achievements" id="Achievements">
+      <br><br>
+      <h2 class="section-title" style="text-align: center;">Achievements</h2>
+      <div class="scene">
+        <div class="cube">
+          <div class="cube-face front" onclick="showModal('academic merit.jpeg', '2nd Place in Academic Merit - Awarded at LBRCE Annual Day')">
+            <img src="academic merit.jpeg" alt="Academic Merit">
+            <p>Academic Merit<br>(2nd Place)</p>
+          </div>
+          <div class="cube-face back" onclick="showModal('smartcoder.jpeg', 'Smart Coder Global Rank: 7,588 out of 42,222 participants')">
+            <img src="smartcoder.jpeg" alt="Smart Coder Rank">
+            <p>Smart Coder Rank</p>
+          </div>
+          <div class="cube-face right" onclick="showModal('pptvvit.jpeg', '2nd Prize in PowerPoint Presentation at VVIT Fest 2K24')">
+            <img src="pptvvit.jpeg" alt="PPT 2nd Prize">
+            <p>PPT 2nd Prize</p>
+          </div>
+          <div class="cube-face left" onclick="showModal('hackathon.jpeg', '3rd Place in IT Department Hackathon at LBRCE')">
+            <img src="hackathon.jpeg" alt="Hackathon 3rd Place">
+            <p>Hackathon 3rd Place</p>
+          </div>
+          <div class="cube-face top" onclick="showModal('treasurehunt.jpeg', '1st Prize in Treasure Hunt Competition at LBRCE')">
+            <img src="treasurehunt.jpeg" alt="Treasure Hunt Winner">
+            <p>Treasure Hunt Winner</p>
+          </div>
+          <div class="cube-face bottom" onclick="showModal('fullstack.jpeg', '1st Place Top Performer in Full Stack Workshop with Innostes & LBRCE')">
+            <img src="fullstack.jpeg" alt="Full Stack Topper">
+            <p>Full Stack Topper</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="overlay" id="overlay" onclick="closeModal()"></div>
+      <div class="modal" id="modal">
+        <img id="modal-img" src="" alt="Achievement Image" style="width: 250px; border-radius: 10px; margin-bottom: 15px;">
+        <p id="modal-text" style="color: #fff;"></p>
+        <button onclick="closeModal()" style="margin-top: 10px;">Close</button>
+      </div>
+    </section>
+    
+
+    <section id="contact">
+        <h2 class="section-title" style="text-align: center;">Contact Me</h2>
+        
+        <div class="contact-static">
+          <p><i class="fas fa-user"></i> <strong>Name:</strong> Lakshmi Susmitha Thota</p>
+          <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thotalakshmisusmitha5@gmail.com</p>
+          <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8486878889</p>
+          <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Vijayawada, Andhra Pradesh, India</p>
+          <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" style="color:rgba(0, 188, 212, 0.6); text-decoration:none;">linkedin.com/in/lakshmisusmitha</a></p>
+          <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/LakshmiSusmithaThota" target="_blank" style="color:rgba(0, 188, 212, 0.6); text-decoration:none;">github.com/lakshmisusmitha</a></p>
+        </div>
+      </section>
+
+      <footer>
+        <p>Follow me on: 
+            <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a> | 
+            <a href="https://github.com/LakshmiSusmithaThota" target="_blank">
+                <i class="fab fa-github"></i> Github
+            </a> 
+           
+        </p>
+    
+    
+        <p style="text-align: center;">&copy; 2025 Lakshmi Susmitha Thota Portfolio. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+      function showModal(imageSrc, description) {
+        document.getElementById('modal-img').src = imageSrc;
+        document.getElementById('modal-text').innerText = description;
+        document.getElementById('overlay').classList.add('active');
+        document.getElementById('modal').classList.add('active');
+      }
+    
+      function closeModal() {
+        document.getElementById('overlay').classList.remove('active');
+        document.getElementById('modal').classList.remove('active');
+      }
+    </script>
+</body>
+<script>
+  
+</script>
+</html>
