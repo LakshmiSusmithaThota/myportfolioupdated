@@ -247,12 +247,71 @@
   transition: transform 0.3s, box-shadow 0.3s;
 }
        
+
+
+
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .scene {
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-static {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .timeline-section {
+    padding: 50px 5%;
+  }
+
+  .timeline-card h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* For very small screens (like phones) */
+@media (max-width: 480px) {
+  .scene {
+    width: 150px;
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-static p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
         }
       
         footer {
+        width: auto;
             text-align: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
@@ -397,7 +456,7 @@
 
 
 .scene {
-    margin-left: 450px;
+    margin-left: 350px;
     width: 250px;
     height: 250px;
     perspective: 800px;
@@ -429,8 +488,8 @@
   }
 
   .cube-face img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     margin-bottom: 10px;
   }
@@ -561,6 +620,205 @@
   font-size: 1rem;
   color: rgba(0, 188, 212, 0.6);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.cert-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 8px 25px rgba(0, 173, 181, 0.3);
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid rgba(0, 173, 181, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cert-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  transition: transform 0.4s ease;
+}
+
+.cert-card h4 {
+  font-size: 18px;
+  color: #eeeeee;
+  line-height: 1.4;
+  margin-top: auto;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.cert-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 173, 181, 0.2), transparent 70%);
+  transition: all 0.6s;
+  opacity: 0;
+  transform: rotate(25deg);
+}
+
+.cert-card:hover::before {
+  opacity: 1;
+}
+
+.cert-card:hover img {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.cert-card:hover h4 {
+  color: #00ffcc;
+}
+
+.cert-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 173, 181, 0.4);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h3 {
+    font-size: 28px;
+  }
+
+  .cert-card {
+    height: auto;
+    padding: 20px 15px;
+  }
+
+  .cert-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cert-card h4 {
+    font-size: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.coding-profiles {
+  padding: 40px;
+  text-align: center;
+ 
+}
+
+.coding-profiles h3 {
+  font-size: 2rem;
+  color: #00bcd4;
+  margin-bottom: 30px;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.profile-card {
+  background: #000;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
+}
+
+.profile-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  filter: brightness(0.9);
+}
+
+.profile-card h4 {
+  color: #ffffff;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.progress-bar {
+  background: #444;
+  border-radius: 10px;
+  height: 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00bcd4 0%, #232426 100%);
+  width: 0;
+  animation: fillBar 2s forwards;
+}
+
+@keyframes fillBar {
+  to {
+    width: var(--bar-width);
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -576,6 +834,7 @@
         <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
         <li><a href="#skills"><i class="fas fa-tools"></i>Skills</a></li>
         <li><a href="#projects"><i class="fas fa-code"></i>Projects</a></li>
+        <li><a href="#badges"><i class="fas fa-certificate"></i>Certificates</a></li>
         <li><a href="#Achievements"><i class="fas fa-trophy"></i>Achievements</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
         
@@ -759,7 +1018,69 @@
        
       </section>
       
+
+
+      <section class="coding-profiles" id="profiles">
+        <h2 class="section-title"> Coding Profiles</h2>
       
+   
+        <div class="profiles-grid">
+      
+          <a href="https://leetcode.com/u/lakshmi_susmitha/" target="_blank">
+            <div class="profile-card">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
+              <h4>LeetCode</h4>
+            </div>
+          </a>
+      
+          <a href="https://www.codechef.com/users/thotasusmitha" target="_blank">
+            <div class="profile-card">
+              <img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.svg" alt="CodeChef" />
+              <h4>CodeChef</h4>
+            </div>
+          </a>
+      
+          <a href="https://codeforces.com/profile/lakshmisusmithat" target="_blank">
+            <div class="profile-card">
+              <img src="https://sta.codeforces.com/s/111181/images/codeforces-logo-with-telegram.png" alt="CodeForces" />
+              <h4>CodeForces</h4>
+            </div>
+          </a>
+      
+          <a href="https://www.hackerrank.com/profile/thotasusmitha" target="_blank">
+            <div class="profile-card">
+              <img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg" alt="HackerRank" />
+              <h4>HackerRank</h4>
+            </div>
+          </a>
+      
+          <a href="https://smartinterviews.in/profile/lakshmi_susmitha" target="_blank">
+            <div class="profile-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Hive Primary" />
+              <h4>Hive Primary</h4>
+            </div>
+          </a>
+      
+          <a href="https://www.interviewbit.com/profile/lakshmisusmitha-thota/" target="_blank">
+            <div class="profile-card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbcV7RKLbFsyXzfZqpmNTLbE1GnkRRKk2jAQ&s" alt="InterviewBit" width="60" height="60" />
+              <h4>InterviewBit</h4>
+            </div>
+          </a>
+          
+          
+          <a href="https://www.geeksforgeeks.org/user/lakshmisurg49/" target="_blank">
+            <div class="profile-card">
+              <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" />
+              <h4>GeeksforGeeks</h4>
+            </div>
+          </a>
+      
+         
+        </div>
+      </section>
+      
+
 
     <section class="projects" id="projects">
         <h2 style="text-align: center;" class="section-title">My Projects</h2>
@@ -811,9 +1132,72 @@
         
         </div>
     </section>
+    <section class="projects" id="badges">
+      <h2 style="text-align: center;" class="section-title">My Certifications & Badges</h2>
+   
+    <div class="certifications-grid">
+    
+     
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Cybersecurity" />
+          <h4>Cybersecurity (Aadhar & Capgemini)</h4>
+        </div>
+      </a>
+    
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Data Analytics using Python" />
+          <h4>NPTEL Elite+ Silver - Data Analytics Using Python</h4>
+        </div>
+      </a>
+     
+        <div class="cert-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce AI Associate" />
+          <h4>Salesforce AI Associate</h4>
+        </div>
+      </a>
+      
+      
+    
+   
+  <div class="cert-card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Cloud Quest" />
+    <h4>AWS Certified Cloud Quest Badge</h4>
+  </div>
+</a>
 
-
-
+    
+     
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="NPTEL Java" />
+          <h4>NPTEL Elite+ Silver - Java</h4>
+        </div>
+      </a>
+    
+     
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Communication Skills" />
+          <h4>Communication Skills - RITx & edX</h4>
+        </div>
+      </a>
+     
+      
+     
+     
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4727/4727252.png" alt="English for IT" />
+          <h4>English for IT 1 - Cisco</h4>
+        </div>
+      </a>
+      
+     
+        <div class="cert-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Essentials" />
+          <h4>Python Essentials 1 - Cisco</h4>
+        </div>
+      </a>
+    
+    </div>
+    
     <section class="Achievements" id="Achievements">
       <br><br>
       <h2 class="section-title" style="text-align: center;">Achievements</h2>
@@ -898,7 +1282,4 @@
       }
     </script>
 </body>
-<script>
-  
-</script>
 </html>
