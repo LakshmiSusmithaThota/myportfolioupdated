@@ -1,1285 +1,885 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dark Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-                .about-section {
-          background: linear-gradient(135deg, rgba(5, 75, 84, 0.6));
-          padding: 60px 30px;
-          border-radius: 25px;
-          box-shadow: 0 0 40px #11b9b9;
-          color: #fff;
-          max-width: 1100px;
-          margin: 60px auto;
-          overflow: hidden;
-          animation: fadeInUp 1s ease forwards;
-        }
-      
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      
-        .about-content {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 40px;
-        }
-      
-        .about-image img {
-          width: 250px;
-          height: 250px;
-          border-radius: 50%;
-          object-fit: cover;
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-          transition: transform 0.3s, box-shadow 0.3s;
-        }
-      
-        .about-image img:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 35px rgba(0, 188, 212, 0.6);
-        }
-      
-        .about-text {
-          flex: 1;
-        }
-      
-        .about-text h2 {
-          font-size: 3rem;
-          margin-bottom: 20px;
-          text-shadow: 0 0 12px rgba(0, 188, 212, 0.6);
-        }
-      
-        .about-text p {
-          font-size: 1.3rem;
-          line-height: 1.8;
-          max-width: 700px;
-        }
-      
-        .resume-download {
-          margin-top: 30px;
-        }
-      
-        .resume-download a {
-          display: inline-block;
-          padding: 12px 24px;
-          background-color: rgba(0, 188, 212, 0.6);
-          color: #fff;
-          text-decoration: none;
-          border-radius: 30px;
-          font-weight: bold;
-          transition: all 0.3s ease;
-        }
-      
-        .resume-download a:hover {
-          background-color:rgba(23, 26, 26, 0.6);
-          box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
-          transform: scale(1.05);
-        }
-      
-        @media (max-width: 768px) {
-          .about-content {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
-          .about-text p {
-            max-width: 100%;
-          }
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #0e2b37);
-            color: #fff;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-           
-            padding: 20px 10%;
-            position: fixed;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 1000;
-        }
-        header h1 {
-            font-size: 2rem;
-            color: #00bcd4;
-        }
-        nav ul {
-          justify-content:space-evenly;
-            display: flex;
-            list-style: none;
-        }
-        nav ul li {
-            margin-left: 30px;
-        }
-        nav ul li a {
-        
-        
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #00bcd4;
-        }
-        section {
-            padding: 100px 10%;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-        .hero span {
-            color: #00bcd4;
-            animation: typing 3s steps(20, end) infinite;
-        }
-        @keyframes typing {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
-        }
-          .projects, .contact {
-            margin-top: 50px;
-        }
-        .skills {
-  padding: 40px;
-  text-align: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lakshmi Susmitha Thota Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* ---------- Reset & Base ---------- */
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#0f2027,#203a43,#0e2b37);
+      color:#fff;
+    }
+    img{max-width:100%;display:block}
+    section{padding:100px 6vw}
+    :root{
+      --brand:#00bcd4;
+      --glass:rgba(0,0,0,.7);
+    }
+
+    /* ---------- Header + Responsive Nav ---------- */
+    header{
+      position:fixed;inset:0 0 auto 0;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 6vw;z-index:1000;
+      background:var(--glass);backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .logo{display:flex;align-items:center;gap:8px;font-weight:700}
+    .logo i{color:rgba(0,188,212,.6)}
+    .logo,.logo i{font-size:1.25rem}
+
+    .menu-toggle{
+      display:none;
+      background:transparent;border:0;color:#fff;font-size:1.6rem;cursor:pointer;
+    }
+
+    nav ul{
+      list-style:none;display:flex;gap:28px;align-items:center;
+    }
+    nav a{
+      text-decoration:none;color:#fff;font-weight:500;display:inline-flex;gap:8px;
+      transition:color .3s;
+    }
+    nav a:hover{color:var(--brand)}
+
+    /* Mobile menu */
+    @media (max-width: 900px){
+      .menu-toggle{display:block}
+      nav{
+        position:fixed;top:56px;right:0;left:0;
+        transform:translateY(-16px);opacity:0;pointer-events:none;
+        transition:opacity .25s ease, transform .25s ease;
+      }
+      nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+      nav ul{
+        flex-direction:column;gap:0;
+        background:var(--glass);backdrop-filter:blur(8px);
+        border-top:1px solid rgba(255,255,255,.08);
+      }
+      nav li{width:100%}
+      nav a{padding:14px 6vw;width:100%}
+      body.nav-open{overflow:hidden}
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{
+      min-height:100svh; /* mobile-safe viewport */
+      padding-top:calc(56px + 6vh);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      gap:18px;
+    }
+    .hero h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2}
+    .hero p{font-size:clamp(1rem,2.5vw,1.5rem)}
+    .hero span{color:var(--brand);animation:blink 3s steps(20,end) infinite}
+    @keyframes blink{0%,100%{opacity:0}50%{opacity:1}}
+
+    .button-group{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+      padding:12px 20px;border-radius:50px;font-weight:600;font-size:1rem;color:#fff;
+      transition:transform .3s, box-shadow .3s;
+    }
+    .btn:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+    .linkedin-btn{background:#0A66C2}
+    .github-btn{background:#171515}
+    .email-btn{background:#D44638}
+    .resume-btn{background:#28a745}.resume-btn:hover{background:#218838}
+
+    /* ---------- About ---------- */
+    .about-section{
+      background:linear-gradient(135deg,rgba(5,75,84,.6));
+      padding:60px 30px;border-radius:25px;box-shadow:0 0 40px #11b9b9;color:#fff;
+      max-width:1100px;margin:60px auto;overflow:hidden;animation:fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .about-content{display:flex;flex-wrap:wrap;align-items:center;gap:40px}
+    .about-image img{
+      width:min(230px,60vw);height:min(300px,60vw);border-radius:10%;object-fit:cover;
+      box-shadow:0 0 25px rgba(0,0,0,.2);transition:transform .3s, box-shadow .3s;
+    }
+    .about-image img:hover{transform:scale(1.05);box-shadow:0 0 35px rgba(0,188,212,.6)}
+    .about-text{flex:1;min-width:260px}
+    .about-text h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:16px;text-shadow:0 0 12px rgba(0,188,212,.6)}
+    .about-text p{font-size:1.05rem;line-height:1.8;max-width:70ch}
+    .resume-download{margin-top:24px}
+    .resume-download a{
+      display:inline-block;padding:12px 24px;background-color:rgba(0,188,212,.6);
+      color:#fff;text-decoration:none;border-radius:15px;font-weight:700;transition:all .3s ease;
+    }
+    .resume-download a:hover{background:rgba(23,26,26,.6);box-shadow:0 0 15px rgba(0,188,212,.6);transform:scale(1.05)}
+    @media (max-width:768px){
+      .about-content{flex-direction:column;text-align:center}
+      .about-text p{max-width:100%}
+    }
+
+
+.about-text {
+  flex: 1;
+  min-width: 260px;
+  text-align: center;   /* Text + button center align */
 }
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 70ch;
+  margin: 0 auto;       /* Paragraph center lo balance avvadaniki */
+}
+
+.resume-download {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;  /* Button center lo */
+}
+
+.resume-download a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: rgba(0,188,212,.6);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 700;
+  transition: all .3s ease;
+}
+
+
+
+    /* ---------- Timelines ---------- */
+    .timeline-card i.fa-graduation-cap { color:#FFD700; }   /* Gold for Education heading */
+.timeline-card i.fa-school         { color:#00e5ff; }   /* Cyan for School/College */
+.timeline-card i.fa-star           { color:#ff9800; }   /* Orange for Grades/CGPA */
+.timeline-card i {
+  margin-right:6px;
+  filter: drop-shadow(0 0 4px rgba(0,255,255,0.4));
+}
+
+    .timeline-section{
+      padding:80px 6vw;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+      text-align:center;position:relative
+    }
+    .section-title{
+      font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:40px;
+      text-shadow:0 0 30px rgba(0,255,255,.6);letter-spacing:2px;animation:fadeInDown 1s ease forwards;
+    }
+    .timeline{display:grid;gap:28px;max-width:900px;margin:0 auto}
+    .timeline-card{
+      background:rgba(255,255,255,.05);backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,.1);border-left:6px solid transparent;
+      border-image:linear-gradient(180deg,#00bcd4,#000);border-image-slice:1;
+      padding:22px 28px;border-radius:20px;position:relative;
+      box-shadow:0 0 30px rgba(0,188,212,.3);transition:all .4s ease;
+      animation:slideUp 1s ease forwards;opacity:0;
+    }
+    .timeline-card:hover{transform:scale(1.03);box-shadow:0 0 40px rgba(0,255,255,.6)}
+    .timeline-card h3{font-size:1.4rem;color:#00f0ff;margin-bottom:10px;text-shadow:0 0 10px rgba(0,240,255,.5)}
+    .timeline-card p{font-size:1.05rem;line-height:1.7;color:#ffffffd9}
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+    @media (max-width:768px){.timeline{gap:20px}.timeline-card{padding:18px 20px}}
+
+
+
+/* Experience Section Icon Colors */
+.timeline-card i.fa-flask         { color:#e91e63; }  /* Pinkish for Research */
+.timeline-card i.fa-microchip     { color:#9c27b0; }  /* Purple for AIoT/Tech */
+.timeline-card i.fa-briefcase     { color:#00e676; }  /* Green for Section Title */
+.timeline-card i.fa-building      { color:#03a9f4; }  /* Blue for Company */
+.timeline-card i.fa-map-marker-alt{ color:#ff5722; }  /* Orange for Location */
+.timeline-card i.fa-calendar-alt  { color:#ffc107; }  /* Yellow for Dates */
+.timeline-card i.fa-project-diagram { color:#00bcd4; }/* Cyan for Projects */
+
+
+
+    /* ---------- Skills ---------- */
+    .skills{padding:60px 6vw;text-align:center}
+    .skills-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:22px;margin-top:22px
+    }
+    .skill-card{
+      background:#000;border-radius:20px;padding:12px;
+      box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .3s, box-shadow .3s;
+    }
+    .skill-card:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(0,188,212,.6)}
+    .skill-card img{width:60px;height:60px;margin:0 auto}
+
+    /* ---------- Coding Profiles ---------- */
+    .coding-profiles{padding:60px 6vw;text-align:center}
+    .profiles-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:24px
+    }
+    .profile-card{
+      background:#000;border-radius:20px;padding:15px;cursor:pointer;
+      box-shadow:0 4px 20px rgba(0,0,0,.2);transition:transform .3s, box-shadow .3s;
+    }
+    .profile-card:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(0,188,212,.7)}
+    .profile-card img{width:60px;height:60px;object-fit:contain;margin:0 auto 10px;filter:brightness(.9)}
+    .profile-card h4{font-size:1rem}
+
+    /* Coding Profiles - Brand Colors */
+.profile-card h4 { 
+  font-size:1rem;
+  font-weight:600;
+  transition:color .3s;
+}
+/* Remove default link styles inside coding profiles */
+.coding-profiles a {
+  text-decoration: none;   /* underline remove */
+  color: inherit;          /* link color h4 nundi inherit avvali */
+}
+
+/* Individual Platform Colors */
+.profile-card:nth-child(1) h4 { color:#ffffffd9; }  /* LeetCode - Orange */
+.profile-card:nth-child(2) h4 { color:#5B4638; }  /* CodeChef - Brown */
+.profile-card:nth-child(3) h4 { color:#1F8ACB; }  /* CodeForces - Blue */
+.profile-card:nth-child(4) h4 { color:#2EC866; }  /* HackerRank - Green */
+.profile-card:nth-child(5) h4 { color:#FF4081; }  /* Hive Primary - Pink */
+.profile-card:nth-child(6) h4 { color:#FF6F00; }  /* InterviewBit - Orange/Amber */
+.profile-card:nth-child(7) h4 { color:#2F8D46; }  /* GeeksforGeeks - Dark Green */
+
+/* Hover effect - glow in brand color */
+.profile-card:hover h4 { 
+  text-shadow:0 0 8px currentColor;
+}
+
+
+    /* ---------- Projects ---------- */
+    .projects{margin-top:20px}
+    .project-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px
+    }
+    .card{
+      background:#000;color:#fff;padding:20px;border-radius:15px;text-align:center;
+      box-shadow:0 4px 10px rgba(0,0,0,.3);transition:transform .3s, box-shadow .3s;
+    }
+    .card:hover{transform:translateY(-10px);box-shadow:0 0 20px rgba(0,188,212,.6)}
+    .card img{border-radius:10px;height:auto}
+
+
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.skill-card {
-  background: #000;
-  border-radius: 20px;
-  padding: 7px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.skill-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-}
-
-.skill-card img {
-  width: 60px;
-  height: 60px;
-}
-
-.skill-card h4 {
-  margin: 10px 0;
-  color: #fff;
-}
-
-.progress-bar {
-  background: #e0e0e0;
-  border-radius: 10px;
-  height: 10px;
-  position: relative;
-  margin-top: 10px;
-}
-
-.progress-bar span {
-  display: block;
-  height: 100%;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #00bcd4 0%, #232426 100%);
-  width: 0;
-  animation: fillBar 2s forwards;
-}
-
-@keyframes fillBar {
-  to {
-    width: var(--bar-width);
-  }
-}
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-.card {
-  background-color: black;
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-       
-
-
-
-
-/* For tablets and smaller devices */
-@media (max-width: 768px) {
-  .scene {
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    height: 200px;
-  }
-
-  .contact-static {
-    padding: 20px;
-    width: 90%;
-  }
-
-  .timeline-section {
-    padding: 50px 5%;
-  }
-
-  .timeline-card h3 {
-    font-size: 1.5rem;
-  }
-}
-
-/* For very small screens (like phones) */
-@media (max-width: 480px) {
-  .scene {
-    width: 150px;
-    height: 150px;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
-  }
-
-  .contact-static p {
-    font-size: 0.95rem;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-        }
-      
-        footer {
-        width: auto;
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-        }
-        footer a {
-            margin: 0 10px;
-            color: #00bcd4;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #fff;
-        }
-        .contact-static {
-      max-width: 500px;
-      margin: 0 auto;
-      background-color: #1f1f1f;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-    }
-    #t
-    {
-        text-align: justify;
-    }
-    .contact-static p {
-      margin: 15px 0;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: start;
-    }
-    .contact-static p i {
-      margin-right: 10px;
-      color: rgba(0, 188, 212, 0.6);
-    }
-
-
-
-
-    .timeline-section {
-    padding: 80px 10%;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    text-align: center;
-    position: relative;
-}
-
-.section-title {
-    font-size: 3.5rem;
-    color: #fff;
-    margin-bottom: 60px;
-    text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
-    letter-spacing: 2px;
-    animation: fadeInDown 1s ease forwards;
-}
-
-.timeline {
-    display: grid;
-    gap: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.timeline-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 6px solid transparent;
-    border-image: linear-gradient(180deg, #00bcd4, #000);
-    border-image-slice: 1;
-    padding: 25px 35px;
-    border-radius: 20px;
-    position: relative;
-    box-shadow: 0 0 30px rgba(0, 188, 212, 0.3);
-    transition: all 0.4s ease;
-    animation: slideUp 1s ease forwards;
-    opacity: 0;
-}
-
-.timeline-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
-}
-
-.timeline-card h3 {
-    font-size: 2rem;
-    color: #00f0ff;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-}
-
-.timeline-card p {
-    font-size: 1.25rem;
-    line-height: 1.7;
-    color: #ffffffd9;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .timeline {
-        gap: 20px;
-    }
-    .timeline-card {
-        padding: 20px;
-    }
-}
-
-
-.timeline-card i {
-    color: #f39c12;
-    margin-right: 8px;
-}
-
-
-
-
-
-
-
-
-
-
-
-.scene {
-    margin-left: 350px;
-    width: 250px;
-    height: 250px;
-    perspective: 800px;
-  }
-  .scene:hover .cube {
-    animation-play-state: paused;
-}
-  .cube {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: rotateCube 30s infinite linear;
-    
-  }
-
-  .cube-face {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: rgba(0, 0, 0, 0.85);
-    border: 2px solid #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-
-  .cube-face img {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  .cube-face:hover {
-    transform: scale(1.05);
-  }
-
-  .front { transform: rotateY(0deg) translateZ(125px); }
-  .back { transform: rotateY(180deg) translateZ(125px); }
-  .right { transform: rotateY(90deg) translateZ(125px); }
-  .left { transform: rotateY(-90deg) translateZ(125px); }
-  .top { transform: rotateX(90deg) translateZ(125px); }
-  .bottom { transform: rotateX(-90deg) translateZ(125px); }
-
-  @keyframes rotateCube {
-    from { transform: rotateX(0deg) rotateY(0deg); }
-    to { transform: rotateX(360deg) rotateY(360deg); }
-  }
-
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(12, 12, 12, 0.95);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
-    display: none;
-    z-index: 10;
-    text-align: center;
-  }
-
-  .modal.active {
-    display: block;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(9, 119, 127, 0.5);
-    display: none;
-    z-index: 9;
-  }
-
-  .overlay.active {
-    display: block;
-  }
-
-        .resume-btn {
-  background-color: #28a745; /* A nice green for resume */
-}
-
-.resume-btn:hover {
-  background-color: #218838; /* Slightly darker green on hover */
-}
-
-
-
-
-        .hero {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
-
-.hero h1 span {
-  color: #ff6f61;
-}
-
-.button-group {
   display: flex;
-  justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  justify-content: center;  /* center align */
+  gap: 22px;                /* spacing between cards */
 }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.linkedin-btn {
-  background-color: #0A66C2;
-}
-
-.github-btn {
-  background-color: #171515;
-}
-
-.email-btn {
-  background-color: #D44638;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  gap: 8px;
-}
-
-.logo i {
-  font-size: 1rem;
-  color: rgba(0, 188, 212, 0.6);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 20px;
-}
-
-.cert-card {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  backdrop-filter: blur(25px);
-  box-shadow: 0 8px 25px rgba(0, 173, 181, 0.3);
-  padding: 30px 20px;
+.skill-card {
+  flex: 0 1 180px;          /* each card fixed width */
   text-align: center;
-  border: 1px solid rgba(0, 173, 181, 0.3);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.cert-card img {
+
+  
+
+
+
+    /* ---------- Certifications ---------- */
+    .certifications-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:24px;max-width:1200px;margin:30px auto;padding:0 6vw
+    }
+    .cert-card{
+      background:rgba(0,0,0,.3);border-radius:20px;backdrop-filter:blur(25px);
+      box-shadow:0 8px 25px rgba(0,173,181,.3);padding:24px 18px;text-align:center;
+      border:1px solid rgba(0,173,181,.3);transition:all .4s ease;position:relative;overflow:hidden;
+      height:300px;display:flex;flex-direction:column;justify-content:center;
+    }
+    .cert-card img{width:90px;height:90px;object-fit:contain;margin:0 auto 16px;transition:transform .4s}
+    .cert-card h4{font-size:18px;color:#eee;line-height:1.4;margin-top:auto;padding:0 10px;transition:color .3s}
+    .cert-card::before{
+      content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+      background:radial-gradient(circle at center,rgba(0,173,181,.2),transparent 70%);
+      transition:all .6s;opacity:0;transform:rotate(25deg);
+    }
+    .cert-card:hover::before{opacity:1}
+    .cert-card:hover img{transform:scale(1.15) rotate(8deg)}
+    .cert-card:hover h4{color:#00ffcc}
+    .cert-card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 20px 50px rgba(0,173,181,.4)}
+    @media (max-width:600px){
+      .cert-card{height:auto;padding:18px 14px}
+      .cert-card img{width:70px;height:70px}
+      .cert-card h4{font-size:15px}
+    }
+
+    .cert-card img {
   width: 90px;
   height: 90px;
   object-fit: contain;
-  margin: 0 auto 20px;
-  transition: transform 0.4s ease;
+  margin: 0 auto 8px;   /* 16px → 8px ki taggicham */
+  transition: transform .4s;
 }
 
 .cert-card h4 {
   font-size: 18px;
-  color: #eeeeee;
-  line-height: 1.4;
-  margin-top: auto;
-  padding: 0 10px;
-  transition: color 0.3s ease;
+  color: #eee;
+  line-height: 1.3;     /* 1.4 → 1.3 ki taggicham */
+  margin-top: 4px;      /* auto → 4px ki change chesam */
+  padding: 0 8px;
+  transition: color .3s;
 }
 
-.cert-card::before {
-  content: "";
+
+    /* ---------- Achievements 3D Cube ---------- */
+    .scene{
+      margin:24px auto;width:min(260px,70vw);height:min(260px,70vw);perspective:800px;
+    }
+    .scene:hover .cube{animation-play-state:paused}
+    .cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:rotateCube 25s infinite linear}
+
+
+    .cube-face{
+      position:absolute;inset:0;background:rgba(0,0,0,.85);border:2px solid #fff;border-radius:12px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s;padding:10px;text-align:center;
+    }
+    .cube-face:hover{transform:scale(1.05)}
+    .cube-face img{width:100px;height:100px;border-radius:10px;margin-bottom:10px}
+    .front  { transform:rotateY(0deg)   translateZ(130px) }
+.back   { transform:rotateY(180deg) translateZ(130px) }
+.right  { transform:rotateY(90deg)  translateZ(130px) }
+.left   { transform:rotateY(-90deg) translateZ(130px) }
+.top    { transform:rotateX(90deg)  translateZ(130px) }
+.bottom { transform:rotateX(-90deg) translateZ(130px) }
+
+    @keyframes rotateCube{from{transform:rotateX(0) rotateY(0)}to{transform:rotateX(360deg) rotateY(360deg)}}
+
+    .modal{
+      position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+      background:rgba(12,12,12,.95);padding:20px;border-radius:15px;box-shadow:0 0 50px rgba(0,0,0,.2);
+      display:none;z-index:1001;text-align:center;max-width:min(90vw,420px)
+    }
+    .modal img{width:100%;height:auto;border-radius:10px;margin-bottom:12px}
+    .modal.active{display:block}
+    .overlay{
+      position:fixed;inset:0;background:rgba(9,119,127,.5);display:none;z-index:1000
+    }
+    .overlay.active{display:block}
+
+/* ---------- Activities (Flip Cards) ---------- */
+.activities {
+  padding: 60px 6vw;
+  text-align: center;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+/* Flip card base */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(0, 173, 181, 0.2), transparent 70%);
-  transition: all 0.6s;
-  opacity: 0;
-  transform: rotate(25deg);
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.3);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0, 188, 212, 0.3);
+  transition: all 0.4s ease;
 }
 
-.cert-card:hover::before {
-  opacity: 1;
+/* Front */
+.flip-card-front {
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-.cert-card:hover img {
-  transform: scale(1.15) rotate(8deg);
+.flip-card-front img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: transform 0.4s;
 }
 
-.cert-card:hover h4 {
+.flip-card-front h4 {
+  font-size: 17px;
+  color: #eee;
+  transition: color 0.3s;
+}
+
+/* Back */
+.flip-card-back {
+  background: rgba(0, 188, 212, 0.15);
+  color: #fff;
+  transform: rotateY(180deg);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Hover Effects */
+.flip-card:hover .flip-card-front img {
+  transform: scale(1.12) rotate(6deg);
+}
+
+.flip-card:hover .flip-card-front h4 {
   color: #00ffcc;
 }
 
-.cert-card:hover {
-  transform: translateY(-12px) scale(1.05);
-  box-shadow: 0 20px 50px rgba(0, 173, 181, 0.4);
+.flip-card:hover .flip-card-front {
+  box-shadow: 0 16px 40px rgba(0, 188, 212, 0.5);
 }
 
-a {
-  text-decoration: none;
-}
-
-/* Responsive adjustments */
 @media (max-width: 600px) {
-  h3 {
-    font-size: 28px;
+  .flip-card-inner {
+    height: 240px;
   }
-
-  .cert-card {
-    height: auto;
-    padding: 20px 15px;
+  .flip-card-front img {
+    width: 60px;
+    height: 60px;
   }
-
-  .cert-card img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .cert-card h4 {
+  .flip-card-front h4 {
     font-size: 15px;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.coding-profiles {
-  padding: 40px;
-  text-align: center;
- 
-}
-
-.coding-profiles h3 {
-  font-size: 2rem;
-  color: #00bcd4;
-  margin-bottom: 30px;
-}
-
-.profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.profile-card {
-  background: #000;
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.profile-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
-}
-
-.profile-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
-  filter: brightness(0.9);
-}
-
-.profile-card h4 {
-  color: #ffffff;
-  margin-top: 10px;
-  font-size: 1.1rem;
-}
-
-.progress-bar {
-  background: #444;
-  border-radius: 10px;
-  height: 10px;
-  position: relative;
-  margin-top: 10px;
-}
-
-.progress-bar span {
-  display: block;
-  height: 100%;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #00bcd4 0%, #232426 100%);
-  width: 0;
-  animation: fillBar 2s forwards;
-}
-
-@keyframes fillBar {
-  to {
-    width: var(--bar-width);
+  .flip-card-back {
+    font-size: 13px;
   }
 }
 
 
-    </style>
+
+    /* ---------- Contact ---------- */
+    .contact-static{
+      max-width:600px;margin:0 auto;background:#1f1f1f;padding:26px;border-radius:15px;box-shadow:0 0 20px rgba(0,188,212,.6)
+    }
+    .contact-static p{margin:12px 0;font-size:1rem;display:flex;align-items:center;gap:10px}
+    .contact-static p i{color:rgba(0,188,212,.8)}
+    #t{text-align:justify}
+
+    /* ---------- Footer ---------- */
+    footer{text-align:center;padding:22px;background:var(--glass)}
+    footer a{margin:0 10px;color:var(--brand);transition:color .3s}
+    footer a:hover{color:#fff}
+  </style>
 </head>
+
 <body>
   <header>
-    <div class="logo">
-      <i class="fas fa-user-circle"></i> LT
-    </div>
-    <nav>
+    <div class="logo"><i class="fas fa-user-circle"></i> LT</div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" id="menuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="siteNav">
       <ul>
         <li><a href="#hero"><i class="fas fa-home"></i>Home</a></li>
         <li><a href="#about"><i class="fas fa-user"></i>About</a></li>
         <li><a href="#Education"><i class="fas fa-graduation-cap"></i>Education</a></li>
-        <li><a href="#experience"><i class="fas fa-briefcase"></i>Experience</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i>Internships</a></li>
         <li><a href="#skills"><i class="fas fa-tools"></i>Skills</a></li>
         <li><a href="#projects"><i class="fas fa-code"></i>Projects</a></li>
         <li><a href="#badges"><i class="fas fa-certificate"></i>Certificates</a></li>
         <li><a href="#Achievements"><i class="fas fa-trophy"></i>Achievements</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i>Contact</a></li>
-        
       </ul>
     </nav>
   </header>
-  
 
-    <section class="hero" id="hero">
-        <h1>Hello! <br>I'm Lakshmi Susmitha Thota <br><span>an aspiring Web Developer</span></h1>
-        <div class="button-group">
-          <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" class="btn linkedin-btn">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a> 
-          <a href="https://github.com/LakshmiSusmithaThota" target="_blank" class="btn github-btn">
-            <i class="fab fa-github"></i> GitHub
-          </a> 
-
-          <a href="resume.pdf" download class="btn resume-btn">
-            <i class="fas fa-file-alt"></i> Resume
-          </a>
-          
-          <a href="mailto:thotalakshmisusmitha@gmail.com" class="btn email-btn">
-            <i class="fas fa-envelope"></i> Email
-          </a>
-
-        </div>
-    </section>
-    <section id="about" class="about-section">
-        <div class="about-content">
-          <div class="about-image">
-            <img src="image.jpeg" alt="Lakshmi Susmitha Thota">
-          </div>
-          <div class="about-text">
-            <h2>About Me</h2>
-            <p id="t">Hello! I’m Lakshmi Susmitha Thota, a passionate and creative web developer. I specialize in crafting beautiful, responsive, and user-friendly websites using modern technologies like HTML, CSS, and JavaScript. My enthusiasm for continuous learning drives me to explore advanced frameworks and innovative design techniques.</p>
-            <div class="resume-download">
-              <a href="resume.pdf" download>Download My Resume</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      <section id="Education" class="timeline-section">
-        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-        <div class="timeline">
-            <div class="timeline-card">
-                <h3><i class=></i> B.Tech in Information Technology</h3>
-                <p><i class="fas fa-school"></i> Lakireddy Balireddy College of Engineering<br>2022 - 2026</p>
-                <p><i class="fas fa-star"></i> 9.35 CGPA (till V Sem)</p>
-            </div>
-            <div class="timeline-card">
-                <h3><i class=></i> Intermediate (MPC)</h3>
-                <p><i class="fas fa-school"></i> Gitams Junior College<br>2020 - 2022</p>
-                <p><i class="fas fa-star"></i> 97.9%</p>
-            </div>
-            <div class="timeline-card">
-                <h3><i class=></i> SSC</h3>
-                <p><i class="fas fa-school"></i> Sri Chaitanya Techno School<br>2019 - 2020</p>
-                <p><i class="fas fa-star"></i> 99.5%</p>
-            </div>
-        </div>
-    </section>
-    
-
-
-
-
-    <section id="experience" class="timeline-section">
-      <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
-      <div class="timeline">
-          <div class="timeline-card">
-              <h3><i class="fas fa-microchip"></i> AIoT Internship, Project Lead</h3>
-              <p><i class="fas fa-building"></i> Smart Home & Industrial Solutions <br>
-              <i class="fas fa-map-marker-alt"></i> Vijayawada, AP
-              <i class="fas fa-calendar-alt"></i> May 2024 – July 2024</p>
-              <p><i class="fas fa-project-diagram"></i> <strong>The Prodigy Campus: Smart Automation for a New Era</strong><br>
-              Spearheaded design & deployment of an intelligent campus automation system to elevate efficiency & user convenience.</p>
-              <p><strong>Technologies Used:</strong> Python, Thonny IDE, OpenCV, MIT App Inventor, Google Sheets API</p>
-          </div>
-      </div>
-     
-  </section>
-  
-
-
-
-
-
-
-
-
-
-      
-      
-
-      <section class="skills" id="skills">
-        <h2 class="section-title">My Skills</h2>
-      
-        <!-- Programming Languages -->
-        <h4 >Programming Languages</h4>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-            <h4>HTML</h4>
-           
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-            <h4>CSS</h4>
-           
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-            <h4>JavaScript</h4>
-           
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-            <h4>React</h4>
-          
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-            <h4>Node.js</h4>
-            
-          </div>
-         
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-            <h4>Python</h4>
-           
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-            <h4>Java</h4>
-           
-          </div>
-        </div>
-      <br>
-        <!-- Databases -->
-        <h3>Databases</h3>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-            <h4>MongoDB</h4>
-          
-          </div>
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
-            <h4>SQL</h4>
-           
-          </div>
-        </div>
-      <br>
-        <!-- Tools -->
-        <h3>Tools</h3>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="VS Code" />
-            <h4>VS Code</h4>
-          </div>
-        
-          <div class="skill-card">
-            <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jupyter.svg" alt="Jupyter Notebook" style="background: white; border-radius: 8px; padding: 5px;" />
-            <h4>Jupyter Notebook</h4>
-          </div>
-        
-          <div class="skill-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png" alt="Google Colab" />
-            <h4>Google Colab</h4>
-          </div>
-        
-          <div class="skill-card">
-            <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub" />
-            <h4>Github</h4>
-          </div>
-        </div>
-        
-      
-       
-      </section>
-      
-
-
-      <section class="coding-profiles" id="profiles">
-        <h2 class="section-title"> Coding Profiles</h2>
-      
-   
-        <div class="profiles-grid">
-      
-          <a href="https://leetcode.com/u/lakshmi_susmitha/" target="_blank">
-            <div class="profile-card">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
-              <h4>LeetCode</h4>
-            </div>
-          </a>
-      
-          <a href="https://www.codechef.com/users/thotasusmitha" target="_blank">
-            <div class="profile-card">
-              <img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.svg" alt="CodeChef" />
-              <h4>CodeChef</h4>
-            </div>
-          </a>
-      
-          <a href="https://codeforces.com/profile/lakshmisusmithat" target="_blank">
-            <div class="profile-card">
-              <img src="https://sta.codeforces.com/s/111181/images/codeforces-logo-with-telegram.png" alt="CodeForces" />
-              <h4>CodeForces</h4>
-            </div>
-          </a>
-      
-          <a href="https://www.hackerrank.com/profile/thotasusmitha" target="_blank">
-            <div class="profile-card">
-              <img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg" alt="HackerRank" />
-              <h4>HackerRank</h4>
-            </div>
-          </a>
-      
-          <a href="https://smartinterviews.in/profile/lakshmi_susmitha" target="_blank">
-            <div class="profile-card">
-              <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Hive Primary" />
-              <h4>Hive Primary</h4>
-            </div>
-          </a>
-      
-          <a href="https://www.interviewbit.com/profile/lakshmisusmitha-thota/" target="_blank">
-            <div class="profile-card">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbcV7RKLbFsyXzfZqpmNTLbE1GnkRRKk2jAQ&s" alt="InterviewBit" width="60" height="60" />
-              <h4>InterviewBit</h4>
-            </div>
-          </a>
-          
-          
-          <a href="https://www.geeksforgeeks.org/user/lakshmisurg49/" target="_blank">
-            <div class="profile-card">
-              <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" />
-              <h4>GeeksforGeeks</h4>
-            </div>
-          </a>
-      
-         
-        </div>
-      </section>
-      
-
-
-    <section class="projects" id="projects">
-        <h2 style="text-align: center;" class="section-title">My Projects</h2>
-      
-        <div class="project-grid">
-            <div class="card">
-                <h3>The Prodigy Campus: Smart Campus Automation (AIoT)</h3>
-                <img src="image1.png" alt="" width="250px" height="200px">
-                <p ><strong>Role:</strong> Team Lead</p>
-                <p><strong>Tools:</strong> Python IDLE, Thonny, MIT App Inventor, Google Sheets, IoT Kit</p>
-                <p><strong>Description:</strong> Built a smart system that automates lights and fans using face detection. Displays real-time data on an LCD, stores data in Google Sheets, and allows mobile monitoring via an MIT App.</p>
-            </div>
-
-
-            <div class="card">
-              <h3>My Portfolio</h3>
-              <br>
-              <br>
-              <br>
-              <img src="image.png" alt="" width="250px" height="200px">
-              <p><strong>Role:</strong> Developer</p>
-              <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
-              <p><strong>Description:</strong> Created a dynamic personal portfolio website with interactive features, showcasing projects, skills, and achievements with responsive design.</p>
-          </div>
-
-          <div class="card">
-            <h3>WanderWay</h3>
-            <br>
-            <br>
-            <br>
-            <img src="image copy 2.png" alt="" width="250px" height="200px">
-            <p><strong>Role:</strong> Team Lead</p>
-            <p><strong>Tools:</strong> HTML, CSS, JavaScript, jQuery</p>
-            <p><strong>Description:</strong> Designed and developed a responsive and interactive travel website with smooth navigation, destination selection, package browsing, and efficient booking processes to enhance user experience.</p>
-          </div>
-
-            <div class="card">
-              <h3>Ballot Bridge: Online Voting System (MERN Stack)</h3>
-              <img src="image copy.png" alt="" width="250px" height="200px">
-              <p><strong>Role:</strong> Team Lead</p>
-              <p><strong>Tools:</strong> VS Code, MongoDB Atlas, React.js, Node.js, Express.js, HTML, CSS, JavaScript</p>
-              <p><strong>Description:</strong> Developed a secure voting platform with role-based authentication, a React front-end, and Node.js backend. Integrated MongoDB Atlas for tamper-proof .</p>
-          </div>
-          
-         
-          
-          
-          
-        
-        </div>
-    </section>
-    <section class="projects" id="badges">
-      <h2 style="text-align: center;" class="section-title">My Certifications & Badges</h2>
-   
-    <div class="certifications-grid">
-    
-     
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Cybersecurity" />
-          <h4>Cybersecurity (Aadhar & Capgemini)</h4>
-        </div>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <h1>Hello! <br>I'm Lakshmi Susmitha Thota <br><span>an aspiring ML Engineer</span></h1>
+    <div class="button-group">
+      <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" class="btn linkedin-btn">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-    
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Data Analytics using Python" />
-          <h4>NPTEL Elite+ Silver - Data Analytics Using Python</h4>
-        </div>
+      <a href="https://github.com/LakshmiSusmithaThota" target="_blank" class="btn github-btn">
+        <i class="fab fa-github"></i> GitHub
       </a>
-     
-        <div class="cert-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce AI Associate" />
-          <h4>Salesforce AI Associate</h4>
-        </div>
+      <a href="_blank" download class="btn resume-btn">
+        <i class="fas fa-file-alt"></i> Resume
       </a>
-      
-      
-    
-   
-  <div class="cert-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Cloud Quest" />
-    <h4>AWS Certified Cloud Quest Badge</h4>
-  </div>
-</a>
-
-    
-     
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="NPTEL Java" />
-          <h4>NPTEL Elite+ Silver - Java</h4>
-        </div>
+      <a href="mailto:thotalakshmisusmitha@gmail.com" class="btn email-btn">
+        <i class="fas fa-envelope"></i> Email
       </a>
-    
-     
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Communication Skills" />
-          <h4>Communication Skills - RITx & edX</h4>
-        </div>
-      </a>
-     
-      
-     
-     
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/4727/4727252.png" alt="English for IT" />
-          <h4>English for IT 1 - Cisco</h4>
-        </div>
-      </a>
-      
-     
-        <div class="cert-card">
-          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Essentials" />
-          <h4>Python Essentials 1 - Cisco</h4>
-        </div>
-      </a>
-    
     </div>
-    
-    <section class="Achievements" id="Achievements">
-      <br><br>
-      <h2 class="section-title" style="text-align: center;">Achievements</h2>
-      <div class="scene">
-        <div class="cube">
-          <div class="cube-face front" onclick="showModal('academic merit.jpeg', '2nd Place in Academic Merit - Awarded at LBRCE Annual Day')">
-            <img src="academic merit.jpeg" alt="Academic Merit">
-            <p>Academic Merit<br>(2nd Place)</p>
-          </div>
-          <div class="cube-face back" onclick="showModal('smartcoder.jpeg', 'Smart Coder Global Rank: 7,588 out of 42,222 participants')">
-            <img src="smartcoder.jpeg" alt="Smart Coder Rank">
-            <p>Smart Coder Rank</p>
-          </div>
-          <div class="cube-face right" onclick="showModal('pptvvit.jpeg', '2nd Prize in PowerPoint Presentation at VVIT Fest 2K24')">
-            <img src="pptvvit.jpeg" alt="PPT 2nd Prize">
-            <p>PPT 2nd Prize</p>
-          </div>
-          <div class="cube-face left" onclick="showModal('hackathon.jpeg', '3rd Place in IT Department Hackathon at LBRCE')">
-            <img src="hackathon.jpeg" alt="Hackathon 3rd Place">
-            <p>Hackathon 3rd Place</p>
-          </div>
-          <div class="cube-face top" onclick="showModal('treasurehunt.jpeg', '1st Prize in Treasure Hunt Competition at LBRCE')">
-            <img src="treasurehunt.jpeg" alt="Treasure Hunt Winner">
-            <p>Treasure Hunt Winner</p>
-          </div>
-          <div class="cube-face bottom" onclick="showModal('fullstack.jpeg', '1st Place Top Performer in Full Stack Workshop with Innostes & LBRCE')">
-            <img src="fullstack.jpeg" alt="Full Stack Topper">
-            <p>Full Stack Topper</p>
-          </div>
-        </div>
-      </div>
-    
-      <div class="overlay" id="overlay" onclick="closeModal()"></div>
-      <div class="modal" id="modal">
-        <img id="modal-img" src="" alt="Achievement Image" style="width: 250px; border-radius: 10px; margin-bottom: 15px;">
-        <p id="modal-text" style="color: #fff;"></p>
-        <button onclick="closeModal()" style="margin-top: 10px;">Close</button>
-      </div>
-    </section>
-    
+  </section>
 
-    <section id="contact">
-        <h2 class="section-title" style="text-align: center;">Contact Me</h2>
-        
-        <div class="contact-static">
-          <p><i class="fas fa-user"></i> <strong>Name:</strong> Lakshmi Susmitha Thota</p>
-          <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thotalakshmisusmitha5@gmail.com</p>
-          <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8486878889</p>
-          <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Vijayawada, Andhra Pradesh, India</p>
-          <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" style="color:rgba(0, 188, 212, 0.6); text-decoration:none;">linkedin.com/in/lakshmisusmitha</a></p>
-          <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/LakshmiSusmithaThota" target="_blank" style="color:rgba(0, 188, 212, 0.6); text-decoration:none;">github.com/lakshmisusmitha</a></p>
-        </div>
-      </section>
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-image">
+      <img src="susmitha.png" alt="Lakshmi Susmitha Thota">
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p id="t">
+        Hello! I’m <b>Lakshmi Susmitha Thota</b>, a Final-year <b>B.Tech IT student</b> with a strong academic record (CGPA: <b>9.31</b>).  
+        I have expertise in <b>MERN-stack development</b>, <b>AI/ML</b>, and <b>IoT automation</b>, and I’m passionate about creating 
+        <b>scalable solutions</b> that solve real-world problems.  
+        <br><br>
+        I’ve delivered measurable outcomes, including <b>30% improvement in system efficiency</b> 
+        and <b>92%+ accuracy in ML models</b>.  
+        Proficient in <b>Python, Java, React.js, Node.js, MongoDB, and SQL</b>, I also hold certifications in 
+        <b>Java, Python, and SQL</b>.  
+        <br><br>
+        Driven by curiosity and innovation, I am excited to contribute my skills and passion 
+        for <b>digital transformation</b> at <b>a dynamic work Environment</b>.
+      </p>
+      <div class="resume-download">
+        <a href="_blank" download>Download My Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <footer>
-        <p>Follow me on: 
-            <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a> | 
-            <a href="https://github.com/LakshmiSusmithaThota" target="_blank">
-                <i class="fab fa-github"></i> Github
-            </a> 
-           
+
+  <!-- EDUCATION -->
+  <section id="Education" class="timeline-section">
+    <h2 class="section-title"></i> Education</h2>
+    <div class="timeline">
+      <div class="timeline-card">
+        <h3><i class=""></i> B.Tech in Information Technology</h3>
+        <p><i class="fas fa-school"></i> Lakireddy Balireddy College of Engineering<br>2022 - 2026</p>
+        <p><i class="fas fa-star"></i> 9.31 CGPA (till VI Sem)</p>
+      </div>
+      <div class="timeline-card">
+        <h3><i class=""></i> Intermediate (MPC)</h3>
+        <p><i class="fas fa-school"></i> Gitams Junior College<br>2020 - 2022</p>
+        <p><i class="fas fa-star"></i> 97.9%</p>
+      </div>
+      <div class="timeline-card">
+        <h3><i class=""></i> SSC</h3>
+        <p><i class="fas fa-school"></i> Sri Chaitanya Techno School<br>2019 - 2020</p>
+        <p><i class="fas fa-star"></i> 99.5%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="timeline-section">
+    <h2 class="section-title">Internships</h2>
+    <div class="timeline">
+      <div class="timeline-card">
+        <h3><i class="fas fa-flask"></i> Research Intern – Machine Learning & Bioinformatics</h3>
+        <p>
+          <i class="fas fa-building"></i> National Institute of Technology (NIT), Warangal<br>
+          <i class="fas fa-map-marker-alt"></i> Warangal, Telangana<br>
+          <i class="fas fa-calendar-alt"></i> June 2025 – July 2025
         </p>
-    
-    
-        <p style="text-align: center;">&copy; 2025 Lakshmi Susmitha Thota Portfolio. All Rights Reserved.</p>
-    </footer>
+        <p><i class="fas fa-project-diagram"></i> <strong>Biomarker Discovery using ML on Biomedical Datasets</strong><br>
+          Developed machine learning pipelines for biomedical data analysis, focusing on biomarker discovery using gene expression and DNA methylation data. Worked on TCGA-LAML for AML classification and GSE66175 for personalized diet response prediction.
+        </p>
+        <p><strong>Technologies Used:</strong> Python, Scikit-learn, Machine Learning , Pandas</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3><i class="fas fa-microchip"></i> AIoT Internship, Project Lead</h3>
+        <p>
+          <i class="fas fa-building"></i> Smart Home & Industrial Solutions<br>
+          <i class="fas fa-map-marker-alt"></i> Vijayawada, AP<br>
+          <i class="fas fa-calendar-alt"></i> May 2024 – July 2024
+        </p>
+        <p><i class="fas fa-project-diagram"></i> <strong>The Prodigy Campus: Smart Automation for a New Era</strong><br>
+          Spearheaded the design and deployment of an intelligent campus automation system to enhance operational efficiency and user convenience.
+        </p>
+        <p><strong>Technologies Used:</strong> Python, Thonny IDE, OpenCV, MIT App Inventor, Google Sheets API</p>
+      </div>
+
+     
+    </div>
+  </section>
+
+  <!-- SKILLS (unchanged content, responsive styles above) -->
+  <section class="skills" id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <h4>Programming Languages</h4>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/><h4>Python</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/><h4>Java</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"/><h4>C</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/><h4>JavaScript</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"/><h4>HTML</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"/><h4>CSS</h4></div>
+    </div>
+    <br>
+
+     <h3>Tools</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="VS Code"/><h4>VS Code</h4></div>
+      <div class="skill-card"><img src="https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/jupyter.svg" alt="Jupyter Notebook" style="background:#fff;border-radius:8px;padding:5px;"/><h4>Jupyter Notebook</h4></div>
+      <div class="skill-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/512px-Google_Colaboratory_SVG_Logo.svg.png" alt="Google Colab"/><h4>Google Colab</h4></div>
+      <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub"/><h4>GitHub</h4></div>
+       <div class="skill-card"><img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg
+" alt="GitHub"/><h4>Tableau</h4></div>
+    </div>
+    <br>
+
+    <h3>Web Development</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/><h4>React.js</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/><h4>Node.js</h4></div>
+      <div class="skill-card">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" 
+       alt="Express.js" style="background:#fff; padding:6px; border-radius:8px;"/>
+  <h4>Express.js</h4>
+</div>
+
+    </div>
+    <br>
 
 
-    <script>
-      function showModal(imageSrc, description) {
-        document.getElementById('modal-img').src = imageSrc;
-        document.getElementById('modal-text').innerText = description;
-        document.getElementById('overlay').classList.add('active');
-        document.getElementById('modal').classList.add('active');
-      }
-    
-      function closeModal() {
-        document.getElementById('overlay').classList.remove('active');
-        document.getElementById('modal').classList.remove('active');
-      }
-    </script>
+ <h3>Databases</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/><h4>MongoDB</h4></div>
+      <div class="skill-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"/><h4>SQL</h4></div>
+    </div>
+    <br>
+
+
+
+    <h3>Machine Learning</h3>
+   <div class="skills-grid">
+      <div class="skill-card"><img src="https://cdn-icons-png.flaticon.com/512/1089/1089129.png" alt="React"/><h4>Machine Learning</h4></div>
+    </div>
+    <br>
+
+   
+
+   
+  </section>
+
+  <!-- CODING PROFILES -->
+  <section class="coding-profiles" id="profiles">
+    <h2 class="section-title"> Coding Profiles</h2>
+    <div class="profiles-grid">
+      <a href="https://leetcode.com/u/lakshmi_susmitha/" target="_blank"><div class="profile-card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode"/><h4>LeetCode</h4></div></a>
+      <a href="https://www.codechef.com/users/thotasusmitha" target="_blank"><div class="profile-card"><img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.svg" alt="CodeChef"/><h4>CodeChef</h4></div></a>
+      <a href="https://codeforces.com/profile/lakshmisusmithat" target="_blank"><div class="profile-card"><img src="https://sta.codeforces.com/s/111181/images/codeforces-logo-with-telegram.png" alt="CodeForces"/><h4>CodeForces</h4></div></a>
+      <a href="https://www.hackerrank.com/profile/thotasusmitha" target="_blank"><div class="profile-card"><img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg" alt="HackerRank"/><h4>HackerRank</h4></div></a>
+      <a href="https://smartinterviews.in/profile/lakshmi_susmitha" target="_blank"><div class="profile-card"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Hive Primary"/><h4>Hive Primary</h4></div></a>
+      <a href="https://www.interviewbit.com/profile/lakshmisusmitha-thota/" target="_blank"><div class="profile-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbcV7RKLbFsyXzfZqpmNTLbE1GnkRRKk2jAQ&s" alt="InterviewBit" width="60" height="60"/><h4>InterviewBit</h4></div></a>
+      <a href="https://www.geeksforgeeks.org/user/lakshmisurg49/" target="_blank"><div class="profile-card"><img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks"/><h4>GeeksforGeeks</h4></div></a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <h2 class="section-title" style="text-align:center;">My Projects</h2>
+    <div class="project-grid">
+      <div class="card">
+        <h3>The Prodigy Campus: Smart Campus Automation (AIoT)</h3>
+        <img src="image1.png" alt="" width="250" height="200">
+        <p><strong>Role:</strong> Team Lead</p>
+        <p><strong>Tools:</strong> Python IDLE, Thonny, MIT App Inventor, Google Sheets, IoT Kit</p>
+        <p><strong>Description:</strong> Built a smart system that automates lights and fans using face detection. Displays real-time data on an LCD, stores data in Google Sheets, and allows mobile monitoring via an MIT App.</p>
+      </div>
+
+      <div class="card">
+        <h3>My Portfolio</h3><br><br><br>
+        <img src="image.png" alt="" width="250" height="200">
+        <p><strong>Role:</strong> Developer</p>
+        <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
+        <p><strong>Description:</strong> Created a dynamic personal portfolio website with interactive features, showcasing projects, skills, and achievements with responsive design.</p>
+      </div>
+
+      <div class="card">
+        <h3>WanderWay</h3><br><br><br>
+        <img src="image copy 2.png" alt="" width="250" height="200">
+        <p><strong>Role:</strong> Team Lead</p>
+        <p><strong>Tools:</strong> HTML, CSS, JavaScript, jQuery</p>
+        <p><strong>Description:</strong> Designed and developed a responsive and interactive travel website with smooth navigation, destination selection, package browsing, and efficient booking processes to enhance user experience.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ballot Bridge: Online Voting System (MERN Stack)</h3>
+        <img src="image copy.png" alt="" width="250" height="200">
+        <p><strong>Role:</strong> Team Lead</p>
+        <p><strong>Tools:</strong> VS Code, MongoDB Atlas, React.js, Node.js, Express.js, HTML, CSS, JavaScript</p>
+        <p><strong>Description:</strong> Developed a secure voting platform with role-based authentication, a React front-end, and Node.js backend. Integrated MongoDB Atlas for tamper-proof .</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="projects" id="badges">
+    <h2 class="section-title" style="text-align:center;">Certificates</h2>
+    <div class="certifications-grid">
+     
+      <div class="cert-card"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Data Analytics using Python"/><h4>JavaScript Essentials 1 – Cisco</h4></div>
+      <div class="cert-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce AI Associate"/><h4>Salesforce AI Associate</h4></div>
+     
+      <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="NPTEL Java"/><h4>NPTEL Elite+ Silver - Java</h4></div>
+      <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Communication Skills"/><h4>Communication Skills - RITx & edX</h4></div>
+      <div class="cert-card"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" alt="English for IT"/><h4>SQL (Basic) - Hacker Rank</h4></div>
+      <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python Essentials"/><h4>Python Essentials 1 - Cisco</h4></div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="Achievements" id="Achievements">
+    <h2 class="section-title" style="text-align:center;">Achievements</h2>
+    <div class="scene">
+      <div class="cube">
+        <div class="cube-face front" onclick="showModal('academic merit.jpeg','2nd Place in Academic Merit - Awarded at LBRCE Annual Day')">
+          <img src="academic merit.jpeg" alt="Academic Merit"><p>Academic Merit<br>(2nd Place)</p>
+        </div>
+        <div class="cube-face back" onclick="showModal('smartcoder.jpeg','Smart Coder Global Rank: 7,588 out of 42,222 participants')">
+          <img src="smartcoder.jpeg" alt="Smart Coder Rank"><p>Smart Coder Rank</p>
+        </div>
+        <div class="cube-face right" onclick="showModal('pptvvit.jpeg','2nd Prize in PowerPoint Presentation at VVIT Fest 2K24')">
+          <img src="pptvvit.jpeg" alt="PPT 2nd Prize"><p>PPT 2nd Prize</p>
+        </div>
+        <div class="cube-face left" onclick="showModal('hackathon.jpeg','3rd Place in IT Department Hackathon at LBRCE')">
+          <img src="hackathon.jpeg" alt="Hackathon 3rd Place"><p>Hackathon 3rd Place</p>
+        </div>
+        <div class="cube-face top" onclick="showModal('Medha.jpg','Organized Medha Quiz at Lakshya 2K25 (National Technical Fest) at LBRCE')">
+          <img src="Medha.jpg" alt="Treasure Hunt Winner"><p>Organizer – Medha Quiz Event (Lakshya 2K25)</p>
+        </div>
+        <div class="cube-face bottom" onclick="showModal('PSCMR.jpg','Achieved regional-level qualification for innovative problem-solving and teamwork')">
+          <img src="PSCMR.jpg" alt="Full Stack Topper"><p>Regional Round Qualifier</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closeModal()"></div>
+    <div class="modal" id="modal">
+      <img id="modal-img" src="" alt="Achievement Image">
+      <p id="modal-text" style="color:#fff;"></p>
+      <button onclick="closeModal()" style="margin-top:10px;">Close</button>
+    </div>
+  </section>
+
+
+<!-- EXTRA-CURRICULAR ACTIVITIES -->
+<section class="activities" id="activities">
+  <h2 class="section-title" style="text-align:center;">Extra-Curricular Activities</h2>
+  <div class="activities-grid">
+
+    <!-- NSS Volunteer -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.sPqemhhpQgAzzhsfUD19zgHaHa?pid=Api&P=0&h=220" alt="NSS Volunteer"/>
+          <h4>NSS Volunteer</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Participated in Youth Fest & Cyber Soldier Program, contributing to social service and awareness.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kho-Kho Training -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.hfZuJV1H7OuQgRYAojkrDAAAAA?pid=Api&P=0&h=220" alt="Kho Kho"/>
+          <h4>Kho-Kho Training</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Completed 20-session sports training program, enhancing teamwork, fitness, and discipline.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yoga & Well-being -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.QHFxqEb5uK0oS-n1iBayKAHaHa?pid=Api&P=0&h=220" alt="Yoga"/>
+          <h4>Yoga & Well-being</h4>
+        </div>
+        <div class="flip-card-back">
+          <p>Attended structured sessions focused on wellness, mindfulness, and holistic health.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title" style="text-align:center;">Contact Me</h2>
+    <div class="contact-static">
+      <p><i class="fas fa-user"></i> <strong>Name:</strong> Lakshmi Susmitha Thota</p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> thotalakshmisusmitha5@gmail.com</p>
+      <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 8486878889</p>
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Vijayawada, Andhra Pradesh, India</p>
+      <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank" style="color:rgba(0,188,212,.8);text-decoration:none;">linkedin.com/in/lakshmisusmitha</a></p>
+      <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/LakshmiSusmithaThota" target="_blank" style="color:rgba(0,188,212,.8);text-decoration:none;">github.com/lakshmisusmitha</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Follow me on:
+      <a href="https://linkedin.com/in/lakshmi-susmitha-thota-92919a280/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+      <a href="https://github.com/LakshmiSusmithaThota" target="_blank"><i class="fab fa-github"></i> Github</a>
+    </p>
+    <p>&copy; 2025 Lakshmi Susmitha Thota Portfolio. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const siteNav = document.getElementById('siteNav');
+    menuBtn.addEventListener('click', () => {
+      siteNav.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+      menuBtn.innerHTML = siteNav.classList.contains('open')
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+    // Close menu on link click (mobile)
+    siteNav.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', ()=>{
+        siteNav.classList.remove('open');
+        document.body.classList.remove('nav-open');
+        menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Achievements modal
+    function showModal(imageSrc, description){
+      document.getElementById('modal-img').src = imageSrc;
+      document.getElementById('modal-text').innerText = description;
+      document.getElementById('overlay').classList.add('active');
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal(){
+      document.getElementById('overlay').classList.remove('active');
+      document.getElementById('modal').classList.remove('active');
+    }
+  </script>
 </body>
 </html>
